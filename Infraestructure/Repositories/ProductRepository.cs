@@ -2,7 +2,7 @@
 using Dapper;
 using Domain.Entities;
 
-namespace Infraestructure.Repositories
+namespace Infrastructure.Repositories
 {
     public class ProductRepository : IProductRepository
     {

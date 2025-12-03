@@ -2,7 +2,7 @@
 
 namespace Application.Interfaces
 {
-    public class ISupplierRepository
+    public interface ISupplierRepository
     {
         Task<IEnumerable<Supplier>> GetAllAsync();
         Task<Supplier?> GetByIdAsync(int id);

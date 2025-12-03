@@ -3,7 +3,7 @@ using Application.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
-namespace Infraestructure.Database
+namespace Infrastructure.Database
 {
     public sealed class DapperContext : IDapperContext
     {

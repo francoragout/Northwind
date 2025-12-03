@@ -2,5 +2,5 @@
   <Project Path="API/API.csproj" />
   <Project Path="Application/Application.csproj" />
   <Project Path="Domain/Domain.csproj" />
-  <Project Path="Infraestructure/Infraestructure.csproj" />
+  <Project Path="Infraestructure/Infrastructure.csproj" />
 </Solution>
