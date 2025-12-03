@@ -5,9 +5,6 @@ namespace Application.Dtos.Product
     public class UpdateProductDto
     {
         [Required]
-        public int ProductID { get; set; }
-
-        [Required]
         [StringLength(40)]
         public string ProductName { get; set; } = string.Empty;
 

@@ -5,9 +5,6 @@ namespace Application.Dtos.Supplier
     public class UpdateSupplierDto
     {
         [Required]
-        public int SupplierID { get; set; }
-
-        [Required]
         [StringLength(40)]
         public string CompanyName { get; set; } = string.Empty;
 

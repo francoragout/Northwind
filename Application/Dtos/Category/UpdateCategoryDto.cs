@@ -5,9 +5,6 @@ namespace Application.Dtos.Category
     public class UpdateCategoryDto
     {
         [Required]
-        public int CategoryID { get; set; }
-
-        [Required]
         [StringLength(15)]
         public string CategoryName { get; set; } = string.Empty;
 

@@ -1,7 +1,7 @@
 ﻿using Application.Dtos.Category;
 using Application.Interfaces;
 
-namespace Application.Services
+namespace Application.Services.Category
 {
     public class CategoryService : ICategoryService
     {

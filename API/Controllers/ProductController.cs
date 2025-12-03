@@ -1,15 +1,16 @@
-﻿using Application.Dtos.Category;
-using Application.Services.Category;
+﻿using Application.Dtos.Product;
+using Application.Services.Product;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly ICategoryService _service;
-        public CategoryController(ICategoryService service)
+        private readonly IProductService _service;
+
+        public ProductController(IProductService service)
         {
             _service = service;
         }
@@ -17,31 +18,30 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var categories = await _service.GetAllAsync();
-            return Ok(categories);
+            var products = await _service.GetAllAsync();
+            return Ok(products);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var category = await _service.GetByIdAsync(id);
+            var product = await _service.GetByIdAsync(id);
 
-            if (category == null)
+            if (product == null)
                 return NotFound();
 
-            return Ok(category);
+            return Ok(product);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateCategoryDto dto)
+        public async Task<IActionResult> Create([FromBody] CreateProductDto dto)
         {
             var id = await _service.CreateAsync(dto);
-
             return CreatedAtAction(nameof(GetById), new { id }, null);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateCategoryDto dto)
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateProductDto dto)
         {
             var updated = await _service.UpdateAsync(id, dto);
 
